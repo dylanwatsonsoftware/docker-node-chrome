@@ -10,7 +10,7 @@ RUN apt-get install git
 ENV TMPDIR /tmp
 
 # bash
-RUN apk-get install bash \
+RUN apt-get install bash \
   && ln -sf /bin/bash /bin/sh
 
 # grep
