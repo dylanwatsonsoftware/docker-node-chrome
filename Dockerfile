@@ -1,23 +1,23 @@
 FROM node:12.20.0
 
 # Certificates (used by curl and git)
-RUN apk add --no-cache ca-certificates
+#RUN apk add --no-cache ca-certificates
 
 # Git
-RUN apk add --no-cache git
+RUN apt-get install git
 
 # TMPDIR
 ENV TMPDIR /tmp
 
 # bash
-RUN apk add --no-cache bash \
+RUN apk-get install bash \
   && ln -sf /bin/bash /bin/sh
 
 # grep
-RUN apk add --no-cache grep
+RUN apt-get install grep
 
 # Allow compiling from source
-RUN apk add --no-cache libpng-dev autoconf automake make g++ libtool nasm
+RUN apt-get install libpng-dev autoconf automake make g++ libtool nasm
 
 # npm
 RUN npm i -g npm
@@ -26,7 +26,7 @@ RUN npm i -g npm
 RUN npm i -g pnpm
 
 # python
-RUN apk add --no-cache python3
+RUN apt-get install python3
 
 # chrome
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - 
