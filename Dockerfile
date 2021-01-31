@@ -17,7 +17,7 @@ RUN apt-get install bash \
 RUN apt-get install grep
 
 # Allow compiling from source
-RUN apt-get install libpng-dev autoconf automake make g++ libtool nasm
+RUN apt-get install libpng-dev autoconf automake make g++ libtool
 
 # npm
 RUN npm i -g npm
